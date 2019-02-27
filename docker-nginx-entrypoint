@@ -7,7 +7,7 @@ if [ "${1#-}" != "$1" ]; then
 else
 
 	echo "Set custom nginx configurations"
-	envsubst < /docker/configurations/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf
+	envsubst < /docker/config/conf.d/default.conf > /etc/nginx/conf.d/default.conf
 
 	exec "$@"
 
