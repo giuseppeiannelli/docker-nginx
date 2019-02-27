@@ -1,4 +1,4 @@
-FROM nginx:1.10.1-alpine
+FROM nginx:1.15.7-alpine
 
 ENV VHOST_ROOT=/app/code/public
 ENV VHOST_INDEX=index.php
