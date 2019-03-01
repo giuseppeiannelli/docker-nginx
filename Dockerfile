@@ -1,14 +1,9 @@
-FROM nginx:1.15.7-alpine
+FROM nginx:stable-alpine
 
 ENV VHOST_ROOT=/app/code/public
 ENV VHOST_INDEX=index.php
 ENV NGINX_CLIENTMAXBODYSIZE=16M
-ENV NGINX_CONST_URI='$uri'
-ENV NGINX_CONST_QUERY_STRING='$query_string'
-ENV NGINX_CONST_DOLLAR='$'
-ENV NGINX_CONST_REQUEST_FILENAME='$request_filename'
-
-ENV NGINX_FPM_LISTEN=php-fpm:9000
+ENV FPM_LISTEN_ADDRESS=127.0.0.1:9000
 
 COPY docker /docker
 COPY docker-nginx-entrypoint /usr/local/bin/docker-nginx-entrypoint
